@@ -34,7 +34,9 @@ body {
   text-align: center;
   padding: 5px;
 }
-
+.main-row .item {
+  font-weight: bold;
+}
 .product-image {
   width: 40px; /* Adjust image size */
   height: auto;
