@@ -18,7 +18,10 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
-
+.latestButton1{
+  cursor:pointer;
+  color:red;
+}
 .main-row,
 .row {
   display: flex;
@@ -33,13 +36,20 @@ body {
   flex: 1;
   text-align: center;
   padding: 5px;
+  
+}
+.main-row .item{
+  font-weight: bold;
 }
 
-.product-image {
-  width: 40px; /* Adjust image size */
-  height: auto;
+.img {
+  width: 80px; /* Adjust image size */
+  height: 80px;
   margin-right: 8px; /* Spacing between image and text */
   vertical-align: middle;
+}
+.productName{
+  font-size: 10;
 }
 
 .cart-total {
@@ -80,11 +90,4 @@ button {
   width: 60%;
   margin-top: 10px;
   cursor: pointer;
-}
-
-.dele {
-  color: red;
-  background-color: white;
-  border: none;
-  font-weight: 600;
 }
