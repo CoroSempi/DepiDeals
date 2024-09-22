@@ -6,11 +6,12 @@ function update_total() {
 
   if (document.querySelectorAll(".total").length == 0) {
     console.log("got inside");
-    document.querySelector("#total-of-items").innerHTML = 0;
+    document.querySelector("#total-of-items").innerHTML = "$" + 0;
+    document.querySelector("#Subtotal").innerHTML = "$" +  0;
     return;
   }
-
-  document.querySelector("#total-of-items").innerText = sum;
+  document.querySelector("#Subtotal").innerText = "$" + sum;
+  document.querySelector("#total-of-items").innerText = "$" + sum;
 }
 function append(arr) {
   row = document.createElement("div");
