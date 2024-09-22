@@ -47,7 +47,7 @@ function update(products, quantity, id) {
       console.log(newQuantity);
       console.log(currentQuantity);
       console.log(`${(newQuantity / currentQuantity) * Total}`);
-      total.innerText = (newQuantity / currentQuantity) * Total;
+      total.innerText = "$" + (Math.round(((newQuantity / currentQuantity) * Total)*100)/100).toFixed(2);
       console.log("Updated quantity:", quantityElement.innerText); // Debugging output
     } else {
       console.warn("Invalid or zero quantity; no update performed."); // Debugging output
@@ -78,9 +78,7 @@ products.forEach((product) => {
     <p style="font-size:15px">${product.Name}</p> `,
     `<p>$${product.Price}</p>`,
     `<p class="quantity">${quantity[product.Name]}</p> `,
-    `<p class="total">$${parseInt(
-      quantity[product.Name] * product.Price
-    )}</p> `,
+    `<p class="total">$${(Math.round(parseInt(quantity[product.Name] * product.Price)*100)/100).toFixed(2)}</p> `,
     `<button class='dele' id='${product.Name}'>Delete</button>`,
   ]);
 });
