@@ -15,7 +15,6 @@
 }
 
 #productThumbs {
-
   width: 30%;
   display: flex;
   flex-direction: column;
@@ -104,4 +103,189 @@
 
 button:hover {
   background-color: #c1c1f4;
+}
+
+/*================================== responsive =================================*/
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 200px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s;
+  }
+
+  nav a {
+    color: rgb(0, 0, 0);
+    padding: 10px;
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #0082e6;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .productContainer {
+    flex-direction: column;
+    margin: 20px;
+    gap: 10px;
+  }
+
+  .gallery {
+    min-width: 100%;
+    min-height: auto;
+    gap: 10px;
+  }
+
+  #head {
+    font-size: 15px;
+  }
+  #productTitle {
+    font-size: 15px;
+  }
+  #productOverview {
+    font-size: 12px;
+  }
+  .productMainPic {
+    width: 100%;
+    height: auto;
+  }
+
+  .productCard {
+    min-width: 100%;
+  }
+
+  .productActions {
+    margin-top: 20px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .buy {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  #cartButton {
+    width: 100%;
+  }
+
+  #productInput {
+    width: 40px;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  #upButton,
+  #downButton {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 200px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s;
+  }
+
+  nav a {
+    color: rgb(0, 0, 0);
+    padding: 10px;
+  }
+
+  .menu-icon {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #0082e6;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .productContainer {
+    flex-direction: column;
+    margin: 20px;
+    gap: 10px;
+  }
+
+  .gallery {
+    min-width: 100%;
+    min-height: auto;
+    gap: 10px;
+  }
+
+  #head {
+    font-size: 15px;
+  }
+  #productTitle {
+    font-size: 15px;
+  }
+  #productOverview {
+    font-size: 12px;
+  }
+  .productMainPic {
+    width: 60%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .productCard {
+    min-width: 100%;
+  }
+
+  .productActions {
+    margin-top: 20px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+
+
+  .buy {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  #cartButton {
+    width: 100%;
+  }
+
+  #productInput {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  #upButton,
+  #downButton {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+  }
 }

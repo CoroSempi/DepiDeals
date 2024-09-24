@@ -27,7 +27,6 @@ function searching(text) {
 }
 
 function none(text) {
-  console.log("fe");
   setTimeout(() => {
     text.value = "";
     searchData.style.display = "none";

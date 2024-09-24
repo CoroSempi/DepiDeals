@@ -49,7 +49,7 @@ reqq.addEventListener("readystatechange", () => {
         product,
         parseInt(document.querySelector("#productInput").value)
       );
-      
+
       // handling the dialog ya youssef :)
       if (document.querySelector("#productInput").value > 0) {
         document.getElementById("dialog").style.display = "block";

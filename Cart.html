@@ -3,12 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Cart</title>
     <link rel="stylesheet" href="./Styles/main.css" />
     <link rel="stylesheet" href="./Styles/Cart.css" />
+
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   </head>
   <body>
     <!-- ProjectHeader -->
@@ -18,11 +22,11 @@
       </div>
 
       <!-- Tabs -->
-      <nav>
+      <nav id="navMenu">
         <a class="tab" href="./index.html">Home</a>
         <a class="tab" href="./Trendy.html">Trendy</a>
         <a class="tab" href="./Latest.html">Latest</a>
-        <a class="tab" href="./About.html">About</a>
+        <a class="selectedTab" href="./About.html">About</a>
       </nav>
 
       <div class="actions">
@@ -37,6 +41,7 @@
             <div id="searchData" class="searchData"></div>
           </div>
           <img
+            class="searchData"
             width="30px"
             style="position: absolute; right: -10px; top: 10px"
             src="https://img.icons8.com/?size=100&id=7695&format=png&color=9B9898"
@@ -55,6 +60,14 @@
             alt="cart" />
         </div>
       </div>
+
+      <!-- toggle====================== -->
+      <div class="iconHamburger">
+        <i
+          class="fas fa-bars"
+          style="font-size: 30px"
+          onclick="toggleNav()"></i>
+      </div>
     </header>
 
     <!-- the main section -->
@@ -67,13 +80,12 @@
       <div class="cart">
         <div class="table">
           <div class="main-row">
-            <div class="item"><p>Product</p></div>
-            <div class="item"><p>Price</p></div>
-            <div class="item"><p>Quantity</p></div>
-            <div class="item"><p>Total</p></div>
-            <div class="item"><p>Options</p></div>
+            <div class="item">Product</div>
+            <div class="item">Price</div>
+            <div class="item">Quantity</div>
+            <div class="item">Total</div>
+            <div class="item">Options</div>
           </div>
-
         </div>
       </div>
 
@@ -82,7 +94,7 @@
           <h3>Cart Total</h3>
           <div class="col-item">
             <span>Subtotal</span>
-            <span id="Subtotal" >$1750</span>
+            <span id="Subtotal">$0</span>
           </div>
           <div class="col-item">
             <span>Shipping</span>
@@ -90,13 +102,13 @@
           </div>
           <div class="col-item">
             <span>Total</span>
-            <span id="total-of-items">$1750</span>
+            <span id="total-of-items">$0</span>
           </div>
           <button class="latestButton">Proceed to checkout</button>
         </div>
       </div>
     </main>
-    
+
     <footer>
       <div class="footer-info">
         <div class="footer-img">
@@ -118,8 +130,8 @@
         &copy; 2023-2024 DepiDeals. All rights reserved.
       </div>
     </footer>
-
   </body>
+  <script src="./Scripts/list.js"></script>
   <script src="./Scripts/cart.js"></script>
   <script src="./Scripts/products.js"></script>
   <script src="./Scripts/SearchBar.js"></script>

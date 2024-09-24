@@ -22,7 +22,6 @@ reqq.addEventListener("readystatechange", () => {
     let data = reqq.response;
     data = JSON.parse(data);
     // console.log(data);
-
     // topOffersSlider
     let currentIndex = 0;
     setInterval(() => {
@@ -61,7 +60,7 @@ reqq.addEventListener("readystatechange", () => {
       price.textContent = topData[currentIndex].Price + " $";
       overview.textContent = topData[currentIndex].Overview;
       const a = topData[currentIndex].id;
-      topLink.href = `/product.html?id=${a}`;
+      topLink.href = `./product.html?id=${a}`;
     }
 
     updateSlider();
@@ -71,6 +70,7 @@ reqq.addEventListener("readystatechange", () => {
     data.slice(4, 7).map((e) => {
       const link = document.createElement("a");
       link.href = `./product.html?id=${e.id}`;
+
       let rightt = document.getElementById("rightt");
       const card1 = document.createElement("div");
       card1.className = "card";
@@ -83,6 +83,9 @@ reqq.addEventListener("readystatechange", () => {
       img1.style.marginRight = "16px";
 
       const contentDiv = document.createElement("div");
+      contentDiv.style.display = "flex";
+      contentDiv.style.flexDirection = "column";
+      contentDiv.style.alignItems = "start";
 
       const title1 = document.createElement("h3");
       title1.className = "exCardTitle";
@@ -93,12 +96,16 @@ reqq.addEventListener("readystatechange", () => {
       price1.textContent = e.Price + " $";
 
       const category1 = document.createElement("p");
-      category1.style.margin = "4px 0";
-      category1.style.fontSize = "14px";
+      // category1.style.margin = "4px 0";
+      category1.className = "cate";
+      category1.style.minWidth = "100%";
+      category1.style.textAlign = "left";
       category1.style.color = "#6e6e6e";
-      category1.innerHTML = `Category: <span class="price">${e.Category}</span>`;
+      category1.innerHTML = `Category: <span class="cate">${e.Category}</span>`;
 
       const overview1 = document.createElement("p");
+      overview1.style.minWidth = "100%";
+      overview1.style.textAlign = "left";
       overview1.className = "cardOverView";
       overview1.textContent = e.Overview;
 
@@ -140,8 +147,6 @@ reqq.addEventListener("readystatechange", () => {
 
       button.addEventListener("click", function () {
         AddToCart(e);
- 
-
         // handling the dialog ya youssef :)
         document.getElementById("dialog").style.display = "block";
         setTimeout(() => {

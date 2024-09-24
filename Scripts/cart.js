@@ -7,7 +7,7 @@ function update_total() {
   if (document.querySelectorAll(".total").length == 0) {
     console.log("got inside");
     document.querySelector("#total-of-items").innerHTML = "$" + 0;
-    document.querySelector("#Subtotal").innerHTML = "$" +  0;
+    document.querySelector("#Subtotal").innerHTML = "$" + 0;
     return;
   }
   document.querySelector("#Subtotal").innerText = "$" + sum;
@@ -47,7 +47,11 @@ function update(products, quantity, id) {
       console.log(newQuantity);
       console.log(currentQuantity);
       console.log(`${(newQuantity / currentQuantity) * Total}`);
-      total.innerText = "$" + (Math.round(((newQuantity / currentQuantity) * Total)*100)/100).toFixed(2);
+      total.innerText =
+        "$" +
+        (
+          Math.round((newQuantity / currentQuantity) * Total * 100) / 100
+        ).toFixed(2);
       console.log("Updated quantity:", quantityElement.innerText); // Debugging output
     } else {
       console.warn("Invalid or zero quantity; no update performed."); // Debugging output
@@ -75,10 +79,12 @@ quantity = JSON.parse(localStorage["quantity"]);
 products.forEach((product) => {
   append([
     `<img src="${product.Pic}" style="width:100px;height:90px"/>
-    <p style="font-size:15px">${product.Name}</p> `,
-    `<p>$${product.Price}</p>`,
-    `<p class="quantity">${quantity[product.Name]}</p> `,
-    `<p class="total">$${(Math.round(parseInt(quantity[product.Name] * product.Price)*100)/100).toFixed(2)}</p> `,
+    <p style="font-size:17px">${product.Name}</p> `,
+    `<p style="font-size:17px">$${product.Price}</p>`,
+    `<p class="quantity" style="font-size:17px">${quantity[product.Name]}</p> `,
+    `<p style="font-size:17px" class="total">$${(
+      Math.round(parseInt(quantity[product.Name] * product.Price) * 100) / 100
+    ).toFixed(2)}</p> `,
     `<button class='dele' id='${product.Name}'>Delete</button>`,
   ]);
 });
